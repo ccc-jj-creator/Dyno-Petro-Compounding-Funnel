@@ -1,10 +1,9 @@
-
 import React from 'react';
 
 const InvestmentDetails: React.FC = () => {
     const details = [
         { label: 'Minimum Investment', value: '$25,000' },
-        { label: 'Target APY', value: '12-15%' },
+        { label: 'Target APY', value: 'Up to 15%' },
         { label: 'Distributions', value: 'Monthly' },
         { label: 'Investment Term', value: '2 Years' },
     ];

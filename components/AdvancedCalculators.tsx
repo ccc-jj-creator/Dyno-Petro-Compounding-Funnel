@@ -66,10 +66,17 @@ const AdvancedCalculators: React.FC = () => {
         const taxRate = 0.37;
         const idcPercentage = 0.70;
         const depletionPercentage = 0.15;
-        const wi = 0.01; // Assume 1% working interest for this investment size for modeling
-        const bopd = 50;
-        const mcfd = 300;
-        const opex = 8000;
+        
+        // Calculate Working Interest (WI) proportionally to the investment.
+        // The model assumes a 1% WI is acquired for every $25,000 invested.
+        const BASE_INVESTMENT_FOR_WI = 25000;
+        const BASE_WI = 0.01; // 1% WI
+        const wi = (investment / BASE_INVESTMENT_FOR_WI) * BASE_WI;
+        
+        // Production and cost figures for the ENTIRE project, adjusted for ~15% APY target.
+        const bopd = 13; // Barrels of Oil Per Day for the entire project
+        const mcfd = 80; // Thousand Cubic Feet of Gas Per Day for the entire project
+        const opex = 8000; // Monthly Operating Expense for the entire project
         const severanceTax = 0.046;
         const daysInMonth = 30.4;
         
@@ -158,9 +165,9 @@ const AdvancedCalculators: React.FC = () => {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
                     <h2 className="text-base font-semibold leading-7 text-brand-accent">Investment Modeling</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Explore Your Potential Returns</p>
+                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Model a Real-World Investment</p>
                     <p className="mt-6 text-lg leading-8 text-brand-gray">
-                        Use our interactive modeler to see how tax advantages and monthly cash flow can fuel your long-term growth. Adjust the sliders to fit your financial goals.
+                        Go beyond simple projections. This model simulates a real Dyno Petro investment, showing you the powerful impact of industry-specific tax deductions and how your monthly cash flow directly correlates with market conditions. See how our structure can lower your real out-of-pocket cost and generate consistent returns.
                     </p>
                 </div>
 
@@ -209,7 +216,7 @@ const AdvancedCalculators: React.FC = () => {
                     {/* RESULTS */}
                     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
                        <ResultCard title="Year 1 Tax Savings" value={formatCurrency(results.taxSavings)} subtitle="Immediate capital efficiency" />
-                       <ResultCard title="Projected Avg. Monthly Income" value={formatCurrency(results.monthlyIncome)} subtitle="Consistent cash flow potential" />
+                       <ResultCard title="Projected Monthly Return" value={formatCurrency(results.monthlyIncome)} subtitle={`${marketScenarios[scenario].name} Scenario`} />
                        <ResultCard title="Total Projected Profit" value={formatCurrency(results.totalProfit)} subtitle={`Over ${term} years`} />
                     </div>
 
