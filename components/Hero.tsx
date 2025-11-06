@@ -238,7 +238,9 @@ const Hero: React.FC = () => {
                  </div>
             </div>
         )}
-
+        <p className="mt-8 text-center text-xs text-brand-gray/70 max-w-4xl mx-auto px-6 lg:px-8">
+            Disclaimer: This calculator provides hypothetical projections for informational purposes. These figures do not constitute a guarantee of future performance. Past performance is not indicative of future results. This is not financial advice; please consult with a qualified financial advisor.
+        </p>
       </div>
     </div>
   );
