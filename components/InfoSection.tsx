@@ -17,7 +17,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ title, items, bgColor = 'bg-b
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className={`grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-${items.length > 3 ? 2 : items.length} xl:grid-cols-${items.length > 3 ? 3 : items.length}`}>
+          <dl className={`grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-${items.length > 3 ? 2 : items.length} xl:grid-cols-${items.length > 3 ? 2 : items.length}`}>
             {items.map((item) => (
               <div key={item.title} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">

@@ -5,6 +5,8 @@ import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
 import InvestmentDetails from './components/InvestmentDetails';
 import Footer from './components/Footer';
+import TrackRecord from './components/TrackRecord';
+import AdvancedCalculators from './components/AdvancedCalculators';
 import { advantageItems, riskMitigationItems } from './constants';
 
 const App: React.FC = () => {
@@ -41,6 +43,10 @@ const App: React.FC = () => {
           items={riskMitigationItems} 
           bgColor="bg-brand-dark-blue"
         />
+
+        <TrackRecord />
+
+        <AdvancedCalculators />
 
         <InvestmentDetails />
 

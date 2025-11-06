@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { CalculationResult } from '../types';
@@ -112,13 +113,12 @@ const Hero: React.FC = () => {
     };
 
   return (
-    <div className="relative isolate overflow-hidden bg-brand-dark-blue">
-      <img src="https://images.unsplash.com/photo-1543477582-96b3a2886f34?q=80&w=2940&auto=format&fit=crop" alt="Oil and gas facility" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20" />
+    <div className="bg-brand-dark-blue">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-2xl">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                Visualize Your Potential Returns
+                Project Your Long-Term Growth
               </h1>
               <p className="mt-6 text-lg leading-8 text-brand-gray">
                 Use the interactive calculator to see how our 12-15% APY through a proven, low-risk acquisition model can help you achieve your financial goals.
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
             </div>
             
             <div className="w-full rounded-lg bg-brand-dark-blue/80 backdrop-blur-sm p-8 shadow-2xl ring-1 ring-white/10">
-                <h3 className="text-xl font-semibold text-white text-center mb-6">Investment Calculator</h3>
+                <h3 className="text-xl font-semibold text-white text-center mb-6">Long-Term Growth Calculator</h3>
                 <div className="space-y-4">
                     <div>
                         <label htmlFor="investment" className="block text-sm font-medium leading-6 text-brand-light">Initial Investment ($)</label>
